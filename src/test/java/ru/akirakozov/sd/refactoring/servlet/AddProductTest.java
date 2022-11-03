@@ -12,18 +12,18 @@ public class AddProductTest extends BaseAddTest {
 
     @Test
     public void addOneProduct() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
+        addProduct("iphone 6", 300);
     }
 
     @Test
     public void addTwoProducts() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
     }
 
     @Test
     public void addTwoProductsWithSameNames() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 6", 200L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 6", 200);
     }
 }

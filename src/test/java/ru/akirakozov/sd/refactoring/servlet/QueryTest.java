@@ -29,7 +29,7 @@ public class QueryTest extends BaseAddTest {
         query("count", List.of("Number of products: ", expectedCount.toString()));
     }
 
-    private void sum(Long expectedSum) throws ServletException, IOException {
+    private void sum(Integer expectedSum) throws ServletException, IOException {
         query("sum", List.of("Summary price: ", expectedSum.toString()));
     }
 
@@ -63,7 +63,7 @@ public class QueryTest extends BaseAddTest {
 
     @Test
     public void emptySum() throws ServletException, IOException {
-        sum(0L);
+        sum(0);
     }
 
     @Test
@@ -78,29 +78,29 @@ public class QueryTest extends BaseAddTest {
 
     @Test
     public void twoProductsCount() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
         count(2);
     }
 
     @Test
     public void twoProductsSum() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
-        sum(700L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
+        sum(700);
     }
 
     @Test
     public void twoProductsMin() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
         min("iphone 6\t" + 300);
     }
 
     @Test
     public void twoProductsMax() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
         max("iphone 7\t" + 400);
     }
 }

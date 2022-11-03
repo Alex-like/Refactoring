@@ -19,7 +19,7 @@ public class BaseAddTest extends BaseTest {
         super(servlet, endPath);
     }
 
-    public void addProduct(String name, Long price) throws ServletException, IOException {
+    public void addProduct(String name, Integer price) throws ServletException, IOException {
         addProductServlet.servletAssertCall(
                 Map.of("name", name, "price", price.toString()),
                 "OK" + System.lineSeparator()

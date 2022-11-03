@@ -29,21 +29,21 @@ public class GetProductTest extends BaseAddTest {
 
     @Test
     public void getOneProduct() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        getProduct(List.of("iphone 6\t" + 300L));
+        addProduct("iphone 6", 300);
+        getProduct(List.of("iphone 6\t" + 300));
     }
 
     @Test
     public void getTwoProducts() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 7", 400L);
-        getProduct(List.of("iphone 6\t" + 300L, "iphone 7\t" + 400L));
+        addProduct("iphone 6", 300);
+        addProduct("iphone 7", 400);
+        getProduct(List.of("iphone 6\t" + 300, "iphone 7\t" + 400));
     }
 
     @Test
     public void getTwoWithSameNamesProducts() throws ServletException, IOException {
-        addProduct("iphone 6", 300L);
-        addProduct("iphone 6", 200L);
-        getProduct(List.of("iphone 6\t" + 300L, "iphone 6\t" + 200L));
+        addProduct("iphone 6", 300);
+        addProduct("iphone 6", 200);
+        getProduct(List.of("iphone 6\t" + 300, "iphone 6\t" + 200));
     }
 }
