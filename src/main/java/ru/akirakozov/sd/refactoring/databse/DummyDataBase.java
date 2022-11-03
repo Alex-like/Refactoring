@@ -22,13 +22,13 @@ public class DummyDataBase implements DataBase {
     }
 
     @Override
-    public Integer getProductsCount() {
+    public int getProductsCount() {
         return productList.size();
     }
 
     @Override
-    public Integer getProductPricesSum() {
-        return productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
+    public long getProductPricesSum() {
+        return productList.stream().map(Product::getPrice).reduce(0L, Long::sum);
     }
 
     @Override

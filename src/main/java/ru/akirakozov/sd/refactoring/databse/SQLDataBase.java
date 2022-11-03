@@ -46,7 +46,7 @@ public class SQLDataBase implements DataBase {
         });
     }
 
-    private Integer integerQuery(String sql) {
+    private int integerQuery(String sql) {
         AtomicInteger result = new AtomicInteger();
         executeWithResult(sql, res -> result.set((res.getInt(1))));
         return result.get();
@@ -73,12 +73,12 @@ public class SQLDataBase implements DataBase {
     }
 
     @Override
-    public Integer getProductsCount() {
+    public int getProductsCount() {
         return integerQuery("SELECT COUNT(*) FROM PRODUCT");
     }
 
     @Override
-    public Integer getProductPricesSum() {
+    public long getProductPricesSum() {
         return integerQuery("SELECT SUM(price) FROM PRODUCT");
     }
 
