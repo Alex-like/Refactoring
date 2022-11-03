@@ -21,6 +21,7 @@ public class SQLDataBase implements DataBase {
         update(sql);
     }
 
+    @FunctionalInterface
     private interface SQLFunction<T> {
         void apply(T arg) throws SQLException;
     }
