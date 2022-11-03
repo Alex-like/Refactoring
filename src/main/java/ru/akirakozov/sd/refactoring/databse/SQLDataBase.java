@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SQLDataBase implements DataBase {
@@ -82,16 +83,25 @@ public class SQLDataBase implements DataBase {
     }
 
     @Override
-    public Product getProductWithMinPrice() {
+    public Optional<Product> getProductWithMinPrice() {
         String sql = "SELECT * FROM PRODUCT ORDER BY PRICE LIMIT 1";
-        List<Product> maxProduct = productsQuery(sql);
-        return maxProduct.get(0);
+        List<Product> minProduct = productsQuery(sql);
+        if (minProduct.isEmpty())
+            return Optional.empty();
+        return Optional.of(minProduct.get(0));
     }
 
     @Override
-    public Product getProductWithMaxPrice() {
+    public Optional<Product> getProductWithMaxPrice() {
         String sql = "SELECT * FROM PRODUCT ORDER BY PRICE DESC LIMIT 1";
         List<Product> maxProduct = productsQuery(sql);
-        return maxProduct.get(0);
+        if (maxProduct.isEmpty())
+            return Optional.empty();
+        return Optional.of(maxProduct.get(0));
+    }
+
+    @Override
+    public void dropTable() {
+        update("DROP TABLE PRODUCT");
     }
 }
