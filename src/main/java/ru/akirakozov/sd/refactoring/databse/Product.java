@@ -2,9 +2,9 @@ package ru.akirakozov.sd.refactoring.databse;
 
 public class Product {
     private String  name;
-    private Long    price;
+    private Integer    price;
 
-    public Product(String name, Long price) {
+    public Product(String name, Integer price) {
         this.name = name;
         this.price = price;
     }
@@ -17,11 +17,11 @@ public class Product {
         this.name = name;
     }
 
-    public Long getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

@@ -26,8 +26,8 @@ public class DummyDataBase implements DataBase {
     }
 
     @Override
-    public Long getProductPricesSum() {
-        return productList.stream().map(Product::getPrice).reduce(0L, Long::sum);
+    public Integer getProductPricesSum() {
+        return productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
     }
 
     @Override
