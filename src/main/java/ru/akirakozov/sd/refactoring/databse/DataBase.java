@@ -6,7 +6,7 @@ public interface DataBase {
     public void             addProduct(Product product);
     public List<Product>    selectAllProducts();
     public Integer          getProductsCount();
-    public Integer             getProductPricesSum();
+    public Integer          getProductPricesSum();
     public Product          getProductWithMinPrice();
     public Product          getProductWithMaxPrice();
 }
