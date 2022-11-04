@@ -2,6 +2,7 @@ package ru.akirakozov.sd.refactoring.servlet;
 
 import jakarta.servlet.ServletException;
 import org.junit.Test;
+import ru.akirakozov.sd.refactoring.databse.DummyDataBase;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class GetProductTest extends BaseAddTest {
     public GetProductTest() {
-        super(new GetProductsServlet(), "get-products");
+        super(GetProductsServlet::new, new DummyDataBase());
     }
 
     private void getProduct(List<String> expectedProducts) throws ServletException, IOException {

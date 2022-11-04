@@ -2,6 +2,7 @@ package ru.akirakozov.sd.refactoring.servlet;
 
 import jakarta.servlet.ServletException;
 import org.junit.Test;
+import ru.akirakozov.sd.refactoring.databse.DummyDataBase;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.Map;
 public class QueryTest extends BaseAddTest {
 
     public QueryTest() {
-        super(new QueryServlet(), "get-products");
+        super(QueryServlet::new, new DummyDataBase());
     }
 
     private void query(String query, List<String> expected) throws ServletException, IOException {

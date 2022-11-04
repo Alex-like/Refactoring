@@ -2,12 +2,13 @@ package ru.akirakozov.sd.refactoring.servlet;
 
 import jakarta.servlet.ServletException;
 import org.junit.Test;
+import ru.akirakozov.sd.refactoring.databse.DummyDataBase;
 
 import java.io.IOException;
 
 public class AddProductTest extends BaseAddTest {
     public AddProductTest() {
-        super(new AddProductServlet(), "add-product");
+        super(AbstractServlet::new, new DummyDataBase());
     }
 
     @Test
