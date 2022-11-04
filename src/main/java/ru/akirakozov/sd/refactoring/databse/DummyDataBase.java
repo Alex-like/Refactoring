@@ -1,15 +1,12 @@
 package ru.akirakozov.sd.refactoring.databse;
 
-import com.google.common.collect.HashMultiset;
-import com.google.common.collect.Multiset;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
 public class DummyDataBase implements DataBase {
-    private final Multiset<Product> productList = HashMultiset.create();
+    private final List<Product> productList = new ArrayList<>();
 
     @Override
     public void addProduct(Product product) {
