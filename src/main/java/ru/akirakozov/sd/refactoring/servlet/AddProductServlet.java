@@ -23,7 +23,7 @@ public class AddProductServlet extends AbstractServlet {
 
         dataBase.addProduct(new Product(name, price));
 
-        response.setContentType("text/html");
+        response.getWriter().println("OK");
         setResponse(response);
     }
 }
